@@ -11,12 +11,22 @@ public class Main {
         car1.setMyEngine(MiddleClassEngine);
 
         FuelTank MidSizeFuelTank = new FuelTank(52);
-
         car1.setMyFueltank(MidSizeFuelTank);
 
         Horn myHorn = new Horn("Beep! Beep!");
         car1.setMyHorn(myHorn);
 
+        RearMirror left = new RearMirror(50,"left");
+        RearMirror middle = new RearMirror(100,"middle");
+        RearMirror right = new RearMirror(50,"right");
+
+        Tire tires = new Tire("Pirelli",225, Tire.KIND.SUMMER);
+
+        car1.addMirror(left);
+        car1.addMirror(middle);
+        car1.addMirror(right);
+
+        car1.addTires(tires);
 
         car1.drive();
         car1.getCarStatus();

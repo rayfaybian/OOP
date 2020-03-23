@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Car {
@@ -10,6 +12,8 @@ public class Car {
     private String color;
     private FuelTank myFueltank;
     private Engine myEngine;
+    private List<RearMirror> mirrors;
+    private List<Tire> tires;
     private int speed;
     private Horn myHorn;
     private double fuelIntake;
@@ -23,14 +27,33 @@ public class Car {
         this.model = model;
         this.serialNumber = serialNumber;
         this.color = color;
+        this.mirrors = new ArrayList<>();
+        this.tires = new ArrayList<>();
+    }
+
+
+    public void addMirror(RearMirror rearMirror) {
+        this.mirrors.add(rearMirror);
+        System.out.println("You added a " + rearMirror.getPosition() + " mirror to your car.");
+    }
+
+    public void addTires(Tire tire) {
+        this.tires.add(tire);
+        this.tires.add(tire);
+        this.tires.add(tire);
+        this.tires.add(tire);
+        System.out.println("You added 4 " + tire.getKind() + " tires to your car.");
+
     }
 
     public void setMyFueltank(FuelTank fueltank) {
         this.myFueltank = fueltank;
+        System.out.println("You added a fueltank to your car.");
     }
 
     public void setMyEngine(Engine engine) {
         this.myEngine = engine;
+        System.out.println("You added an engine to your car.");
     }
 
     public void setMyHorn(Horn horn) {
@@ -39,7 +62,7 @@ public class Car {
 
     public void drive() {
         if (speed < 100) {
-            System.out.println("How fast do you want to go? (1-100%)");
+            System.out.println("\nLet´s drive!\nHow fast do you want to go? (1-100%)");
             speed = pedal.nextInt();
             myEngine.revEngine();
             System.out.println("Accelerating to " + getSpeed() + "% speed.");
@@ -76,8 +99,9 @@ public class Car {
             if (brakes > speed) {
                 brakes = speed;
                 System.out.println("Emergency braking! Full stop!");
-            }else if(speed >100){
-                brakes = brakes + 10;}
+            } else if (speed > 100) {
+                brakes = brakes + 10;
+            }
             speed = speed - brakes;
             if (speed == 0) {
                 System.out.println("You stopped the car.");
