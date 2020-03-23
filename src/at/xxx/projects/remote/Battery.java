@@ -6,6 +6,11 @@ public class Battery {
     public Battery(int chargingStatus){
         this.chargingStatus = chargingStatus;
     }
+
+    public void setChargingStatus(int chargingStatus) {
+        this.chargingStatus = chargingStatus;
+    }
+
     public int getChargingStatus(){
         return chargingStatus;
     }
