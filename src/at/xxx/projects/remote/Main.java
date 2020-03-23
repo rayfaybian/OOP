@@ -17,6 +17,9 @@ public class Main {
         myRemote.turnOff();//turns off device
         myRemote.turnOff();//pressing button twice tells you device is already off
 
+        System.out.println("\nBattery status in %: " + myRemote.getBatteryStatus());
+        //battery loses power everytime the remote is used,
+
         lithiumBattery.setChargingStatus(0);//drain battery to see what happens when no powersource is available
         System.out.println("\nBattery status in %: " + myRemote.getBatteryStatus());
         System.out.println("\n");
