@@ -15,18 +15,7 @@ public class RaceCar extends Car {
 
     @Override
     public String toString() {
-        return "Racecar\n" +
-                getTeam() +
-                "\nProducer: " + getProducerName() +
-                "\nModel: " + getModel() +
-                getProducer() +
-                getEngine() +
-                "\nColor: " + getColor() +
-                "\nMaxSpeed: " + getMaxSpeed() + " kph" +
-                "\nMileage: " + getMileage() + " km" +
-                "\nFuelconsumption: " +f1.format(getRealFuelConsumption()) + " l/100km" +
-                "\nBasePrice: € " + f2.format(getBasePrice()) +
-                "\nSellingPrice (after discount) : € " + f2.format(getSellingPrice()) +
-                "\n";
+        return  getTeam() +
+                super.toString();
     }
 }

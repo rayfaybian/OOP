@@ -51,11 +51,11 @@ public class Car {
         return producer;
     }
 
-    public String getProducerName(){
+    public String getProducerName() {
         return producer.getName();
     }
 
-     public String getModel() {
+    public String getModel() {
         return model;
     }
 
@@ -87,20 +87,20 @@ public class Car {
         return realFuelConsumption;
     }
 
-    public void showRealFuelConsumption(){
-        System.out.println("Fuelconsumption: " + f1.format(realFuelConsumption)+ " l/100km\n");
+    public void showRealFuelConsumption() {
+        System.out.println("Fuelconsumption: " + f1.format(realFuelConsumption) + " l/100km\n");
     }
+
     @Override
     public String toString() {
-        return "Car\n" +
-                "\nProducer: " + getProducerName() +
+        return  "\nProducer: " + getProducerName() +
                 "\nModel: " + getModel() +
                 getProducer() +
                 getEngine() +
                 "\nColor: " + getColor() +
                 "\nMaxSpeed: " + getMaxSpeed() + " kph" +
                 "\nMileage: " + getMileage() + " km" +
-                "\nFuelconsumption: " +f1.format(getRealFuelConsumption()) + " l/100km" +
+                "\nFuelconsumption: " + f1.format(getRealFuelConsumption()) + " l/100km" +
                 "\nBasePrice: € " + f2.format(getBasePrice()) +
                 "\nSellingPrice (after discount) : € " + f2.format(getSellingPrice()) + "\n";
 

@@ -20,7 +20,7 @@ public class Main {
 
         Producer audi = new Producer("Audi", "Germany", 8);
         Engine v6 = new Engine(Engine.TYPE.DIESEL, 160);
-        Car stationWagon = new Car("A6 Kombi", "White", 240, 48999,
+        Car stationWagon = new Car("Audi A6 Kombi", "White", 240, 48999,
                 6.40, audi, v6);
 
         Producer tesla = new Producer("Tesla", "USA", 12);
