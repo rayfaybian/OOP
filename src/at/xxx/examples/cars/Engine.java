@@ -1,18 +1,18 @@
 package at.xxx.examples.cars;
 
 public class Engine {
-    public enum TYPE {DIESEL, GAS, ELECTRIC}
+    public enum FUELTYPE {DIESEL, GAS, ELECTRIC}
 
-    private TYPE type;
+    private FUELTYPE fueltype;
     private int power;
 
-    public Engine(TYPE type, int power) {
-        this.type = type;
+    public Engine(FUELTYPE type, int power) {
+        this.fueltype = type;
         this.power = power;
     }
     @Override
     public String toString() {
-        return "\nEngine: " + type +
+        return "\nEngine: " + fueltype +
                 "\nPower: " + power + " HP";
     }
 }

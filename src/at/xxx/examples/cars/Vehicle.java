@@ -2,10 +2,10 @@ package at.xxx.examples.cars;
 
 import java.text.DecimalFormat;
 
-public class Car {
-    DecimalFormat f1 = new DecimalFormat("#0.00");
-    DecimalFormat f2 = new DecimalFormat("#0");
+public class Vehicle {
+    public enum KIND{CAR,TRUCK,RACECAR}
 
+    private KIND kind;
     private String model;
     private String color;
     private int maxSpeed;
@@ -17,8 +17,9 @@ public class Car {
     private int mileage;
     private double realFuelConsumption;
 
-    public Car(String model, String color, int maxSpeed, double basePrice, double baseFuelConsumption,
-               Producer producer, Engine engine) {
+    public Vehicle(KIND kind, String model, String color, int maxSpeed, double basePrice, double baseFuelConsumption,
+                   Producer producer, Engine engine) {
+        this.kind = kind;
         this.model = model;
         this.color = color;
         this.maxSpeed = maxSpeed;
@@ -27,9 +28,8 @@ public class Car {
         this.realFuelConsumption = baseFuelConsumption;
         this.producer = producer;
         this.engine = engine;
-        this.sellingPrice = (((100 - this.producer.getDiscountInPercent()) / 100) * this.basePrice);
         this.mileage = 0;
-
+        setSellingPrice();
     }
 
     public int getMileage() {
@@ -71,10 +71,6 @@ public class Car {
         return basePrice;
     }
 
-    public double getBaseFuelConsumption() {
-        return baseFuelConsumption;
-    }
-
     public Engine getEngine() {
         return engine;
     }
@@ -88,21 +84,29 @@ public class Car {
     }
 
     public void showRealFuelConsumption() {
-        System.out.println("Fuelconsumption: " + f1.format(realFuelConsumption) + " l/100km\n");
+        System.out.println("Fuelconsumption: " + String.format("%.2f", getRealFuelConsumption()) + " l/100km\n");
+    }
+
+    public double setSellingPrice() {
+        this.sellingPrice = (((100 - this.producer.getDiscountInPercent()) / 100) * this.basePrice);
+        return sellingPrice;
+    }
+    public KIND getKind(){
+        return kind;
     }
 
     @Override
     public String toString() {
-        return  "\nProducer: " + getProducerName() +
+        return  "\nKind: " + getKind() +
+                "\nProducer: " + getProducerName() +
                 "\nModel: " + getModel() +
                 getProducer() +
                 getEngine() +
                 "\nColor: " + getColor() +
                 "\nMaxSpeed: " + getMaxSpeed() + " kph" +
                 "\nMileage: " + getMileage() + " km" +
-                "\nFuelconsumption: " + f1.format(getRealFuelConsumption()) + " l/100km" +
-                "\nBasePrice: € " + f2.format(getBasePrice()) +
-                "\nSellingPrice (after discount) : € " + f2.format(getSellingPrice()) + "\n";
-
+                "\nFuelconsumption: " + String.format("%.2f", getRealFuelConsumption()) + " l/100km" +
+                "\nBasePrice: € " + String.format("%.0f", getBasePrice()) +
+                "\nSellingPrice (after discount) : € " + String.format("%.0f", getSellingPrice()) + "\n";
     }
 }

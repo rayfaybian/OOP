@@ -14,31 +14,31 @@ public class Main {
 
 
         Producer astonMartin = new Producer("Aston Martin", "Great Britain", 4);
-        Engine v12 = new Engine(Engine.TYPE.GAS, 725);
-        Car sportsCar = new Car("Aston Martin DBS Superleggera", "Silver", 320, 295500,
-                12.4, astonMartin, v12);
+        Engine v12 = new Engine(Engine.FUELTYPE.GAS, 725);
+        Vehicle sportsCar = new Vehicle(Vehicle.KIND.CAR,"Aston Martin DBS Superleggera", "Silver",
+                320, 295500,12.4, astonMartin, v12);
 
         Producer audi = new Producer("Audi", "Germany", 8);
-        Engine v6 = new Engine(Engine.TYPE.DIESEL, 160);
-        Car stationWagon = new Car("Audi A6 Kombi", "White", 240, 48999,
-                6.40, audi, v6);
+        Engine v6 = new Engine(Engine.FUELTYPE.DIESEL, 160);
+        Vehicle stationWagon = new Vehicle(Vehicle.KIND.CAR,"Audi A6 Kombi", "White",
+                240, 48999,6.40, audi, v6);
 
         Producer tesla = new Producer("Tesla", "USA", 12);
-        Engine p100D = new Engine(Engine.TYPE.ELECTRIC, 611);
-        Car electricCar = new Car("Tesla Model S", "Black", 260, 94880,
-                0, tesla, p100D);
+        Engine p100D = new Engine(Engine.FUELTYPE.ELECTRIC, 611);
+        Vehicle electricCar = new Vehicle(Vehicle.KIND.CAR,"Tesla Model S", "Black",
+                260, 94880,0, tesla, p100D);
 
         Producer mercedes = new Producer("Daimler AG","Germany", 12);
-        Engine v8TruckEngine = new Engine(Engine.TYPE.DIESEL,272);
+        Engine v8TruckEngine = new Engine(Engine.FUELTYPE.DIESEL,272);
         Trailer bigTrailer = new Trailer(2,12,8);
-        Truck bigTruck = new Truck("Mercedes-Benz Actros","Blue",120,86750,
-                22,mercedes,v8TruckEngine,bigTrailer);
+        Truck bigTruck = new Truck(Vehicle.KIND.TRUCK,"Mercedes-Benz Actros","Blue",
+                20,86750,22,mercedes,v8TruckEngine,bigTrailer);
 
         Producer redBull = new Producer("Red Bull Racing","Great Britain",0);
-        Engine v6F1Engine = new Engine(Engine.TYPE.GAS,850);
-        Team redBullRacing = new Team("Red Bull Racing", "Austria","Max Verstappen");
-        RaceCar rB16 = new RaceCar("RB16","Night Blue",382,2600000,
-                32, redBull,v6F1Engine,redBullRacing);
+        Engine v6F1Engine = new Engine(Engine.FUELTYPE.GAS,850);
+        Racingteam redBullRacing = new Racingteam("Red Bull Racing", "Austria","Max Verstappen");
+        RaceCar rB16 = new RaceCar(Vehicle.KIND.RACECAR,"RB16","Midnight Blue",
+                382,2600000,32, redBull,v6F1Engine,redBullRacing);
 
 
 

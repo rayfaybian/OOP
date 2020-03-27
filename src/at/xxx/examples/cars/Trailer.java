@@ -13,7 +13,7 @@ public class Trailer {
 
     @Override
     public String toString() {
-        return "\nTrailer:" +
+        return "Trailer:" +
                 "\nLength:" + length +" meters" +
                 "\nNumber of axles: " + axles +
                 "\nNumber of wheels: " + wheels;

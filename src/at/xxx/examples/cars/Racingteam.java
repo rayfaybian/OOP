@@ -1,11 +1,11 @@
 package at.xxx.examples.cars;
 
-public class Team {
+public class Racingteam {
     private String name;
     private String country;
     private String driver;
 
-    public Team(String name, String country, String driver) {
+    public Racingteam(String name, String country, String driver) {
         this.name = name;
         this.country = country;
         this.driver = driver;
@@ -25,7 +25,7 @@ public class Team {
 
     @Override
     public String toString() {
-        return  "\nTeam: " + getName() +
+        return  "Team: " + getName() +
                 "\nCountry: " + getCountry() +
                 "\nDriver: " + getDriver();
     }
