@@ -60,7 +60,7 @@ public class Car {
                 "\nMileage: " + mileage + " km" +
                 "\nFuelconsumption: " +f1.format(realFuelConsumption) + " l/100km" +
                 "\nBasePrice: € " + f2.format(basePrice) +
-                "\nSellingPrice: € " + f2.format(sellingPrice) + "\n";
+                "\nSellingPrice (after discount) : € " + f2.format(sellingPrice) + "\n";
 
     }
 }
