@@ -16,10 +16,13 @@ public class Producer {
         return discountInPercent;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
-        return "\nProducer: " + name +
-                "\nMade in: " + country +
+        return  "\nMade in: " + country +
                 "\nDiscount: " + discountInPercent + "%";
     }
 }

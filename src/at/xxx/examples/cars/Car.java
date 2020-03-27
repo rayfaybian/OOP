@@ -47,20 +47,62 @@ public class Car {
         this.realFuelConsumption = baseFuelConsumption * 1.098;
     }
 
+    public Producer getProducer() {
+        return producer;
+    }
+
+    public String getProducerName(){
+        return producer.getName();
+    }
+
+     public String getModel() {
+        return model;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public double getBasePrice() {
+        return basePrice;
+    }
+
+    public double getBaseFuelConsumption() {
+        return baseFuelConsumption;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public double getSellingPrice() {
+        return sellingPrice;
+    }
+
+    public double getRealFuelConsumption() {
+        return realFuelConsumption;
+    }
+
     public void showRealFuelConsumption(){
         System.out.println("Fuelconsumption: " + f1.format(realFuelConsumption)+ " l/100km\n");
     }
     @Override
     public String toString() {
-        return "Car: " +
-                producer +
-                engine +
-                "\nColor: " + color +
-                "\nMaxSpeed: " + maxSpeed + " kph" +
-                "\nMileage: " + mileage + " km" +
-                "\nFuelconsumption: " +f1.format(realFuelConsumption) + " l/100km" +
-                "\nBasePrice: € " + f2.format(basePrice) +
-                "\nSellingPrice (after discount) : € " + f2.format(sellingPrice) + "\n";
+        return "Car\n" +
+                "\nProducer: " + getProducerName() +
+                "\nModel: " + getModel() +
+                getProducer() +
+                getEngine() +
+                "\nColor: " + getColor() +
+                "\nMaxSpeed: " + getMaxSpeed() + " kph" +
+                "\nMileage: " + getMileage() + " km" +
+                "\nFuelconsumption: " +f1.format(getRealFuelConsumption()) + " l/100km" +
+                "\nBasePrice: € " + f2.format(getBasePrice()) +
+                "\nSellingPrice (after discount) : € " + f2.format(getSellingPrice()) + "\n";
 
     }
 }
